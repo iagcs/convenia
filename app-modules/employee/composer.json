@@ -1,0 +1,24 @@
+{
+	"name": "modules/employee",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Modules\\Employee\\": "src/",
+			"Modules\\Employee\\Tests\\": "tests/",
+			"Modules\\Employee\\Database\\Factories\\": "database/factories/",
+			"Modules\\Employee\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Modules\\Employee\\Providers\\EmployeeServiceProvider"
+			]
+		}
+	}
+}
