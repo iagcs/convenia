@@ -340,7 +340,7 @@ A rota `/employees/{employeeId}` é usada para ver um novo funcionário.
 |--------|-----------------------------------|
 | 200    | Funcionário retornado com sucesso |
 
-### 3. Deletar um Employee
+### 4. Deletar um Employee
 
 A rota `/employees/{employeeId}` é usada para deletar um novo funcionário.
 
@@ -360,7 +360,7 @@ A rota `/employees/{employeeId}` é usada para deletar um novo funcionário.
 |--------|----------------------------------|
 | 204    | Funcionário deletado com sucesso |
 
-### 4. Ver todos os Employees
+### 5. Ver todos os Employees
 
 A rota `/employees` é usada para ver todos os funcionários do gestor.
 
@@ -414,7 +414,7 @@ A rota `/employees` é usada para ver todos os funcionários do gestor.
 |--------|------------------------------|
 | 200    | Retorno dos funcionarios ok. |
 
-### 3. Importar Funcionarios
+### 6. Importar Funcionarios
 
 A rota `/employees/import` permite a importação em massa de funcionários. Como esse processo é executado de forma assíncrona, o usuário será notificado por e-mail em três
 situações: se ocorrerem erros de validação no arquivo, se houver erros internos durante o processo (status 500), e quando a importação for concluída com sucesso. Apenas a validação
