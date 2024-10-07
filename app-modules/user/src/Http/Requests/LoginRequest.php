@@ -12,7 +12,7 @@ class LoginRequest extends FormRequest
 {
     use WithData;
 
-    protected $dataClass = LoginData::class;
+    protected string $dataClass = LoginData::class;
 
     /**
      * Get the validation rules that apply to the request.

@@ -40,7 +40,7 @@ describe('Testa API de Employee', function(){
         $employee = Employee::factory()->make();
 
         post(route('employees.store'), $employee->toArray())
-            ->assertCreated();
+            ->assertOk();
 
         assertDatabaseCount('employees', 1);
         assertDatabaseHas('employees', $employee->toArray());
@@ -96,9 +96,10 @@ describe('Testa API de Employee', function(){
 
         $employee = Employee::factory()->for($user)->create();
 
+
         get(route('employees.show', $employee->id))
             ->assertOk()
-            ->assertJson($employee->toArray());
+            ->assertJsonFragment(\Arr::only($employee->toArray(), ['name', 'email', 'cpf', 'city', 'state']));
     });
 
     it('should show employee fails forbidden access', function(){

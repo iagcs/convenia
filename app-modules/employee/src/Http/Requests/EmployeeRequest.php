@@ -11,7 +11,7 @@ class EmployeeRequest extends FormRequest
 {
     use WithData;
 
-    protected $dataClass = EmployeeData::class;
+    protected string $dataClass = EmployeeData::class;
 
     /**
      * Get the validation rules that apply to the request.

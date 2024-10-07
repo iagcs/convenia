@@ -29,13 +29,10 @@ class LoginResource extends JsonResource
             'id'           => $this->resource->id,
             'name'         => $this->resource->name,
             'email'        => $this->resource->email,
-            'document'     => $this->resource->document,
-            'city'         => $this->resource->city,
-            'state'        => $this->resource->state,
             'access_token' => $token->plainTextToken,
             'expires_in'   => $expires_at->diffInSeconds(),
-            /*'created_at'   => $this->resource->created_at->toW3cString(),
-            'updated_at'   => $this->resource->updated_at->toW3cString(),*/
+            'created_at'   => $this->resource->created_at->toW3cString(),
+            'updated_at'   => $this->resource->updated_at->toW3cString(),
         ];
     }
 }

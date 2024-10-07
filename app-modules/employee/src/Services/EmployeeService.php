@@ -8,7 +8,10 @@ use Modules\Employee\DTO\EmployeeData;
 
 class EmployeeService
 {
-    public function create(User $user, EmployeeData $employeeData): Employee
+    /**
+     * @throws \Spatie\LaravelData\Exceptions\InvalidDataClass
+     */
+    public function create(User $user, EmployeeData $employeeData): EmployeeData
     {
         $employee = new Employee($employeeData->toArray());
 
@@ -16,19 +19,25 @@ class EmployeeService
 
         $employee->save();
 
-        return $employee;
+        return $employee->getData();
     }
 
-    public function update(Employee $employee, EmployeeData $employeeData): Employee
+    /**
+     * @throws \Spatie\LaravelData\Exceptions\InvalidDataClass
+     */
+    public function update(Employee $employee, EmployeeData $employeeData): EmployeeData
     {
         $employee->update($employeeData->toArray());
 
-        return $employee;
+        return $employee->getData();
     }
 
+    /**
+     * @throws \Spatie\LaravelData\Exceptions\InvalidDataClass
+     */
     public function show(Employee $employee): Employee
     {
-        return $employee;
+        return $employee->getData();
     }
 
     public function destroy(Employee $employee): void
