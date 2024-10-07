@@ -30,7 +30,7 @@ readonly class BatchProcessingService
             });
 
         $fileData->each(function (array $rowProperties, int $index) use ($batch, $cacheKey) {
-            $batch->add(new FileDataValidateJob($rowProperties, $index, $cacheKey));
+            $batch->add(new FileDataValidateJob($rowProperties, $index + 1, $cacheKey));
         });
 
         $batch->dispatch();
